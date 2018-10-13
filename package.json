@@ -1,33 +1,34 @@
 {
   "name": "impetus",
-  "version": "0.8.7",
+  "version": "0.9.0",
   "main": "dist/impetus.js",
   "homepage": "http://chrisbateman.github.io/impetus/",
   "description": "Add momentum to anything. It's like iScroll, except not for scrolling. Supports mouse and touch events.",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
-    "build": "babel src/Impetus.js --modules umd -o dist/impetus.js && uglifyjs dist/impetus.js --comments -cmo dist/impetus.min.js",
-    "postbuild": "cp dist/impetus.min.js docs",
+    "build": "$(npm bin)/babel src/impetus.js --modules umd -o dist/impetus.js && $(npm bin)/uglifyjs dist/impetus.js --comments -cmo dist/impetus.min.js",
     "version": "npm run build && git add dist docs -f"
   },
   "keywords": [
     "momentum",
     "touch"
   ],
-  "author": "Chris Bateman",
+  "author": "Chris Bateman, Simon Fletcher",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:chrisbateman/impetus.git"
+    "url": "git@github.com:timetravlecorp/impetus.git"
   },
   "bugs": {
-    "url": "https://github.com/chrisbateman/impetus/issues"
+    "url": "https://github.com/timetravlecorp/impetus/issues"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
-    "uglify-js": "^2.4.24"
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "uglify-es": "^3.3.9"
   },
   "engines": {
-    "npm": ">=2.13.0"
+    "npm": ">=6.0.0"
   }
 }
